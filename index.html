@@ -295,96 +295,62 @@
         }
 
         /* Sección Servicios */
-        .services {
-            background-color: var(--blanco);
-        }
+.services {
+    background-color: var(--blanco);
+}
 
-        .services-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-        .service-item {
-            background-color: var(--azul-oscuro);
-            color: var(--blanco);
-            flex: 1 1 300px;
-            margin: 20px;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.service-item {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    width: calc(33.333% - 40px); /* Tres recuadros por fila */
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
 
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-        .service-item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
+.service-item img {
+    width: 100%;
+    height: 200px; /* Fija una altura para las imágenes */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
 
-        .service-item h3 {
-            color: var(--rojo);
-            margin-bottom: 10px;
-        }
+.service-item h3 {
+    color: var(--rojo);
+    margin-bottom: 10px;
+}
 
-        .service-item p {
-            font-size: 1em;
-        }
+.service-item p {
+    font-size: 1em;
+    min-height: 80px; /* Ajusta para igualar la altura de los textos */
+}
 
-        /* Sección Contacto */
-        .contact-info ul {
-            list-style: none;
-            padding: 0;
-            font-size: 1.2em;
-        }
+@media (max-width: 992px) {
+    .service-item {
+        width: calc(50% - 40px); /* Dos recuadros por fila en pantallas medianas */
+    }
+}
 
-        .contact-info li {
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            color: var(--azul-oscuro);
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .social-media {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .social-media a {
-            margin: 0 10px;
-        }
-
-        .social-media img {
-            width: 40px;
-            height: 40px;
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-        }
-
-        .social-media img:hover {
-            filter: grayscale(0%);
-        }
-
-        /* Pie de página */
-        footer {
-            background-color: var(--negro-intenso);
-            color: var(--blanco);
-            text-align: center;
-            padding: 20px 0;
-        }
+@media (max-width: 600px) {
+    .service-item {
+        width: calc(100% - 40px); /* Un recuadro por fila en pantallas pequeñas */
+    }
+}
 
         /* Responsividad */
         @media (max-width: 768px) {
@@ -446,66 +412,48 @@
         </div>
     </section>
 
-    <!-- Sección Servicios -->
-    <section id="servicios" class="services">
-        <h2>Servicios</h2>
-        <div class="services-container">
-            <!-- Servicio 1 -->
-            <div class="service-item">
-                <img src="imagenes/torno.jpg" alt="Servicio de Torno">
-                <h3>Torno</h3>
-                <p>Servicio profesional de torneado para piezas de precisión.</p>
-            </div>
-            <!-- Servicio 2 -->
-            <div class="service-item">
-                <img src="imagenes/fresa.jpg" alt="Servicio de Fresa">
-                <h3>Fresa</h3>
-                <p>Fresado de alta precisión para diversas aplicaciones industriales.</p>
-            </div>
-            <!-- Servicio 3 -->
-            <div class="service-item">
-                <img src="imagenes/torno-cnc.jpg" alt="Servicio de Torno CNC">
-                <h3>Torno CNC</h3>
-                <p>Tecnología CNC para producción eficiente y precisa.</p>
-            </div>
-            <!-- Servicio 4 -->
-            <div class="service-item">
-                <img src="imagenes/fresa-cnc.jpg" alt="Servicio de Fresa CNC">
-                <h3>Fresa CNC</h3>
-                <p>Fresado CNC para proyectos complejos y detallados.</p>
-            </div>
-            <!-- Servicio 5 -->
-            <div class="service-item">
-                <img src="imagenes/corte-plasma.jpg" alt="Servicio de Corte Plasma">
-                <h3>Corte Plasma</h3>
-                <p>Cortes precisos en diversos materiales con tecnología de plasma.</p>
-            </div>
-            <!-- Servicio 6 -->
-            <div class="service-item">
-                <img src="imagenes/desarrollo-piezas.jpg" alt="Desarrollo de Piezas">
-                <h3>Desarrollo de Piezas</h3>
-                <p>Fabricación de piezas a medida según tus necesidades.</p>
-            </div>
-            <!-- Servicio 7 -->
-            <div class="service-item">
-                <img src="imagenes/desarrollo-maquinaria.jpg" alt="Desarrollo de Maquinaria">
-                <h3>Desarrollo de Maquinaria</h3>
-                <p>Diseño y fabricación de maquinaria especializada.</p>
-            </div>
-            <!-- Servicio 8 -->
-            <div class="service-item">
-                <img src="imagenes/escaneo-3d.jpg" alt="Servicio de Escaneo 3D">
-                <h3>Escaneo 3D</h3>
-                <p>Digitalización de objetos para ingeniería inversa y diseño.</p>
-            </div>
-            <!-- Servicio 9 -->
-            <div class="service-item">
-                <img src="imagenes/impresion-3d.jpg" alt="Servicio de Impresión 3D">
-                <h3>Impresión 3D</h3>
-                <p>Prototipado rápido y fabricación de piezas con impresión 3D.</p>
-            </div>
+   <!-- Sección Servicios -->
+<section id="servicios" class="services">
+    <h2>Servicios</h2>
+    <div class="services-container">
+        <!-- Servicio 1: Torno y Torno CNC -->
+        <div class="service-item">
+            <img src="imagenes/torno.jpg" alt="Servicio de Torno y Torno CNC">
+            <h3>Torno y Torno CNC</h3>
+            <p>Servicio profesional de torneado para piezas de precisión con tecnología convencional y CNC.</p>
         </div>
-    </section>
+        <!-- Servicio 2: Fresa y Fresa CNC -->
+        <div class="service-item">
+            <img src="imagenes/fresa.jpg" alt="Servicio de Fresa y Fresa CNC">
+            <h3>Fresa y Fresa CNC</h3>
+            <p>Fresado de alta precisión, tanto convencional como CNC, para diversas aplicaciones industriales.</p>
+        </div>
+        <!-- Servicio 3: Desarrollo de Piezas y Maquinaria -->
+        <div class="service-item">
+            <img src="imagenes/desarrollo-piezas.jpg" alt="Desarrollo de Piezas y Maquinaria">
+            <h3>Desarrollo de Piezas y Maquinaria</h3>
+            <p>Fabricación de piezas a medida y diseño de maquinaria especializada según tus necesidades.</p>
+        </div>
+        <!-- Servicio 4: Corte Plasma y Oxicorte -->
+        <div class="service-item">
+            <img src="imagenes/corte-plasma.jpg" alt="Servicio de Corte Plasma y Oxicorte">
+            <h3>Corte Plasma y Oxicorte</h3>
+            <p>Cortes precisos en diversos materiales con tecnología de plasma y oxicorte.</p>
+        </div>
+        <!-- Servicio 5: Soldadura MIG, TIG, Electrodo -->
+        <div class="service-item">
+            <img src="imagenes/soldadura.jpg" alt="Servicio de Soldadura MIG, TIG, Electrodo">
+            <h3>Soldadura MIG, TIG, Electrodo</h3>
+            <p>Servicios de soldadura especializados para diversos materiales y proyectos.</p>
+        </div>
+        <!-- Servicio 6: Escaneo e Impresión 3D -->
+        <div class="service-item">
+            <img src="imagenes/escaneo-3d.jpg" alt="Servicio de Escaneo e Impresión 3D">
+            <h3>Escaneo e Impresión 3D</h3>
+            <p>Digitalización y prototipado rápido para ingeniería inversa y diseño.</p>
+        </div>
+    </div>
+</section>
 
     <!-- Sección Testimonios -->
     <section id="testimonios" class="testimonials">
