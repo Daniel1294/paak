@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PAAK - Mecánica Industrial de Precisión</title>
+    <!-- Meta etiquetas para SEO -->
+    <meta name="description" content="PAAK es líder en soluciones de mecánica industrial de precisión en Ecuador. Ofrecemos servicios de torno, fresa, CNC, corte plasma, escaneo e impresión 3D.">
+    <meta name="keywords" content="mecánica industrial, torno, fresa, CNC, corte plasma, escaneo 3D, impresión 3D, Ecuador, PAAK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta etiquetas Open Graph para redes sociales -->
+    <meta property="og:title" content="PAAK - Mecánica Industrial de Precisión">
+    <meta property="og:description" content="Tu aliado en soluciones de mecánica industrial en Ecuador.">
+    <meta property="og:image" content="https://www.tu-dominio.com/compartir.jpg"> <!-- Reemplaza con la URL de una imagen representativa -->
+    <meta property="og:url" content="https://www.tu-dominio.com">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Estilos CSS -->
+    <style>
+        /* Variables de color */
+        :root {
+            --azul-oscuro: #2A558F;
+            --rojo: #E52232;
+            --negro-intenso: #1D1D1B;
+            --blanco: #FFFFFF;
+        }
+
+        /* Estilos Generales */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--negro-intenso);
+            scroll-behavior: smooth;
+            background-color: var(--blanco);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1, h2, h3 {
+            color: var(--azul-oscuro);
+        }
+
+        button {
+            background-color: var(--rojo);
+            color: var(--blanco);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #C41F28; /* Un tono más oscuro del rojo */
+        }
+
+        button:active {
+            background-color: #A71B22; /* Un tono aún más oscuro del rojo */
+        }
+
+        /* Encabezado */
+        header {
+            background-color: var(--blanco);
+            border-bottom: 1px solid #cccccc;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--negro-intenso);
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            border-radius: 5px;
+        }
+
+        /* Menú desplegable (Dropdown) */
+        .nav-links li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: var(--blanco);
+            min-width: 160px;
+            top: 40px;
+            left: 0;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown a {
+            color: var(--negro-intenso);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+        }
+
+        /* Estilos para móviles */
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-toggle-label {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                background-color: var(--blanco);
+                height: 100vh;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                top: 0;
+                left: 100%;
+                transition: transform 0.3s ease-in;
+            }
+
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-toggle-label {
+                display: block;
+                cursor: pointer;
+            }
+
+            .nav-toggle-label span,
+            .nav-toggle-label span::before,
+            .nav-toggle-label span::after {
+                display: block;
+                background: var(--negro-intenso);
+                height: 2px;
+                width: 25px;
+                position: relative;
+            }
+
+            .nav-toggle-label span::before,
+            .nav-toggle-label span::after {
+                content: '';
+                position: absolute;
+            }
+
+            .nav-toggle-label span::before {
+                top: -8px;
+            }
+
+            .nav-toggle-label span::after {
+                top: 8px;
+            }
+
+            .nav-toggle:checked ~ .nav-links {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Secciones */
+        section {
+            padding: 100px 20px 50px;
+            margin-top: 60px; /* Para evitar que el contenido quede oculto detrás del menú fijo */
+        }
+
+        /* Sección Hero */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1666634157070-6fd830fb5672?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco);
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            background-color: rgba(29, 29, 27, 0.7); /* Capa semitransparente */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        /* Sección Quiénes Somos */
+        .about-us {
+            padding: 100px 20px;
+            background-color: var(--blanco);
+            color: var(--negro-intenso);
+        }
+
+        .about-us h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--azul-oscuro);
+        }
+
+        .about-us-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .about-us-content img {
+            flex: 1 1 300px;
+            max-width: 500px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .about-us-text {
+            flex: 1 1 500px;
+            margin: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .about-us-text p {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .about-us-content {
+                flex-direction: column;
+            }
+        }
+
+        /* Sección Servicios */
+        .services {
+            background-color: var(--blanco);
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .service-item {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            flex: 1 1 300px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .service-item h3 {
+            color: var(--rojo);
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1em;
+        }
+
+        /* Sección Contacto */
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.2em;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--azul-oscuro);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .social-media {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+        }
+
+        .social-media img {
+            width: 40px;
+            height: 40px;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .social-media img:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--negro-intenso);
+            color: var(--blanco);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .services-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="imagenes/logo.png" alt="Logotipo de PAAK">
+            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenidos a PAAK</h1>
+            <p>Líderes en mecánica industrial de precisión en Ecuador</p>
+            <!-- Botón de llamada a la acción -->
+            <button onclick="window.location.href='#contacto'">Contáctanos</button>
+        </div>
+    </section>
+
+    <!-- Sección Quiénes Somos -->
+    <section id="quienes-somos" class="about-us">
+        <h2>Quiénes Somos</h2>
+        <div class="about-us-content">
+            <img src="imagenes/quienes-somos.jpg" alt="Equipo de PAAK Mecánica Industrial">
+            <div class="about-us-text">
+                <p>
+                    Fundada hace más de 20 años, <strong>PAAK Mecánica Industrial</strong> ha sido sinónimo de precisión y calidad en el sector industrial ecuatoriano. Nacimos para satisfacer las necesidades de mantenimiento y creación de maquinaria para empresas dedicadas a la producción de elásticos. Con el tiempo, expandimos nuestros servicios a diversas industrias, adaptándonos a los desafíos tecnológicos y a las demandas del mercado.
+                </p>
+                <p>
+                    Nuestra misión es proporcionar soluciones mecánicas innovadoras y personalizadas que impulsen el crecimiento y eficiencia de nuestros clientes. Nos enorgullece contar con un equipo altamente calificado y maquinaria de última generación que nos permite abordar proyectos de cualquier complejidad.
+                </p>
+                <p>
+                    En PAAK, creemos en construir relaciones a largo plazo basadas en la confianza, el compromiso y la excelencia. Nuestra visión es ser la opción número uno en Ecuador para quienes buscan calidad, precisión y servicio excepcional en mecánica industrial.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services">
+        <h2>Servicios</h2>
+        <div class="services-container">
+            <!-- Servicio 1 -->
+            <div class="service-item">
+                <img src="imagenes/torno.jpg" alt="Servicio de Torno">
+                <h3>Torno</h3>
+                <p>Servicio profesional de torneado para piezas de precisión.</p>
+            </div>
+            <!-- Servicio 2 -->
+            <div class="service-item">
+                <img src="imagenes/fresa.jpg" alt="Servicio de Fresa">
+                <h3>Fresa</h3>
+                <p>Fresado de alta precisión para diversas aplicaciones industriales.</p>
+            </div>
+            <!-- Servicio 3 -->
+            <div class="service-item">
+                <img src="imagenes/torno-cnc.jpg" alt="Servicio de Torno CNC">
+                <h3>Torno CNC</h3>
+                <p>Tecnología CNC para producción eficiente y precisa.</p>
+            </div>
+            <!-- Servicio 4 -->
+            <div class="service-item">
+                <img src="imagenes/fresa-cnc.jpg" alt="Servicio de Fresa CNC">
+                <h3>Fresa CNC</h3>
+                <p>Fresado CNC para proyectos complejos y detallados.</p>
+            </div>
+            <!-- Servicio 5 -->
+            <div class="service-item">
+                <img src="imagenes/corte-plasma.jpg" alt="Servicio de Corte Plasma">
+                <h3>Corte Plasma</h3>
+                <p>Cortes precisos en diversos materiales con tecnología de plasma.</p>
+            </div>
+            <!-- Servicio 6 -->
+            <div class="service-item">
+                <img src="imagenes/desarrollo-piezas.jpg" alt="Desarrollo de Piezas">
+                <h3>Desarrollo de Piezas</h3>
+                <p>Fabricación de piezas a medida según tus necesidades.</p>
+            </div>
+            <!-- Servicio 7 -->
+            <div class="service-item">
+                <img src="imagenes/desarrollo-maquinaria.jpg" alt="Desarrollo de Maquinaria">
+                <h3>Desarrollo de Maquinaria</h3>
+                <p>Diseño y fabricación de maquinaria especializada.</p>
+            </div>
+            <!-- Servicio 8 -->
+            <div class="service-item">
+                <img src="imagenes/escaneo-3d.jpg" alt="Servicio de Escaneo 3D">
+                <h3>Escaneo 3D</h3>
+                <p>Digitalización de objetos para ingeniería inversa y diseño.</p>
+            </div>
+            <!-- Servicio 9 -->
+            <div class="service-item">
+                <img src="imagenes/impresion-3d.jpg" alt="Servicio de Impresión 3D">
+                <h3>Impresión 3D</h3>
+                <p>Prototipado rápido y fabricación de piezas con impresión 3D.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section id="testimonios" class="testimonials">
+        <h2>Testimonios</h2>
+        <div class="testimonials-container">
+            <!-- Aquí podrás agregar testimonios cuando estén disponibles -->
+            <p>Próximamente añadiremos testimonios de nuestros clientes satisfechos.</p>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+            <p>Para consultas y cotizaciones, contáctanos a través de los siguientes medios:</p>
+            <ul>
+                <li><strong>Teléfono:</strong> <a href="tel:+593987654321">+593 98 765 4321</a></li>
+                <li><strong>WhatsApp:</strong> <a href="https://wa.me/593987654321" target="_blank">Enviar mensaje</a></li>
+                <li><strong>Correo Electrónico:</strong> <a href="mailto:info@paak.com">info@paak.com</a></li>
+                <li><strong>Dirección:</strong> Av. Industrial #123, Quito, Ecuador</li>
+            </ul>
+            <!-- Enlaces a redes sociales -->
+            <div class="social-media">
+                <a href="https://www.facebook.com/paak" target="_blank">
+                    <img src="iconos/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/paak" target="_blank">
+                    <img src="iconos/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/company/paak" target="_blank">
+                    <img src="iconos/linkedin.png" alt="LinkedIn">
+                </a>
+                <!-- Agrega otras redes sociales si es necesario -->
+            </div>
+        </div>
+        <!-- Mapa de Ubicación -->
+        <div class="map-container">
+            <!-- Reemplaza el 'src' con el enlace de tu ubicación en Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa de Ubicación"></iframe>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 PAAK Mecánica Industrial. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        // Interacción de botones
+        const buttons = document.querySelectorAll('button');
+
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.backgroundColor = '#C41F28'; // Color más oscuro al pasar el cursor
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.backgroundColor = '#E52232'; // Color original
+            });
+            button.addEventListener('mousedown', () => {
+                button.style.backgroundColor = '#A71B22'; // Color aún más oscuro al hacer clic
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.backgroundColor = '#C41F28'; // Color al soltar clic
+            });
+        });
+    </script>
+</body>
+</html>
