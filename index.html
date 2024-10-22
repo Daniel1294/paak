@@ -163,6 +163,7 @@
                 top: 0;
                 left: 100%;
                 transition: transform 0.3s ease-in;
+                text-align: center; /* Centrar contenido */
             }
 
             .nav-links li {
@@ -205,6 +206,24 @@
 
             .nav-toggle:checked ~ .nav-links {
                 transform: translateX(-100%);
+            }
+
+            /* Centrar el contenido en móvil */
+            .about-us-content,
+            .services-container,
+            .contact-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .about-us-text,
+            .contact-info {
+                text-align: center;
+            }
+
+            .social-media {
+                justify-content: center;
             }
         }
 
@@ -288,154 +307,164 @@
             margin-bottom: 20px;
         }
 
-        @media (max-width: 768px) {
-            .about-us-content {
-                flex-direction: column;
+        /* Sección Servicios */
+        .services {
+            background-color: var(--blanco);
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .service-item {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            width: calc(33.333% - 40px); /* Tres recuadros por fila */
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-sizing: border-box;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 200px; /* Fija una altura para las imágenes */
+            object-fit: cover; /* Ajusta la imagen sin distorsión */
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .service-item h3 {
+            color: var(--rojo);
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1em;
+            min-height: 80px; /* Ajusta para igualar la altura de los textos */
+        }
+
+        @media (max-width: 992px) {
+            .service-item {
+                width: calc(50% - 40px); /* Dos recuadros por fila en pantallas medianas */
             }
         }
 
-        /* Sección Servicios */
-.services {
-    background-color: var(--blanco);
-}
+        @media (max-width: 600px) {
+            .service-item {
+                width: calc(100% - 40px); /* Un recuadro por fila en pantallas pequeñas */
+            }
+        }
 
-.services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+        /* Sección Contacto */
+        .contact {
+            padding: 100px 20px;
+            background-color: var(--blanco);
+            color: var(--negro-intenso);
+        }
 
-.service-item {
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    width: calc(33.333% - 40px); /* Tres recuadros por fila */
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-sizing: border-box;
-}
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--azul-oscuro);
+        }
 
-.service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
+        .contact-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-.service-item img {
-    width: 100%;
-    height: 200px; /* Fija una altura para las imágenes */
-    object-fit: cover; /* Ajusta la imagen sin distorsión */
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
+        .contact-info {
+            flex: 1 1 400px;
+            max-width: 500px;
+            margin: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
 
-.service-item h3 {
-    color: var(--rojo);
-    margin-bottom: 10px;
-}
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.service-item p {
-    font-size: 1em;
-    min-height: 80px; /* Ajusta para igualar la altura de los textos */
-}
+        .contact-info li {
+            margin-bottom: 15px;
+        }
 
-@media (max-width: 992px) {
-    .service-item {
-        width: calc(50% - 40px); /* Dos recuadros por fila en pantallas medianas */
-    }
-}
+        .contact-info a {
+            color: var(--azul-oscuro);
+            text-decoration: none;
+        }
 
-@media (max-width: 600px) {
-    .service-item {
-        width: calc(100% - 40px); /* Un recuadro por fila en pantallas pequeñas */
-    }
-}
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
 
-/* Sección Contacto */
-.contact {
-    padding: 100px 20px;
-    background-color: var(--blanco);
-    color: var(--negro-intenso);
-}
+        .contact-map {
+            flex: 1 1 400px;
+            max-width: 500px;
+            margin: 20px;
+        }
 
-.contact h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--azul-oscuro);
-}
+        .map-container {
+            width: 100%;
+            height: 100%;
+        }
 
-.contact-content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
+        }
 
-.contact-info {
-    flex: 1 1 400px;
-    max-width: 500px;
-    margin: 20px;
-    font-size: 1.1em;
-    line-height: 1.6;
-}
+        /* Estilos para las redes sociales */
+        .social-media {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
 
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-info li {
-    margin-bottom: 15px;
-}
-
-.contact-info a {
-    color: var(--azul-oscuro);
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-.contact-map {
-    flex: 1 1 400px;
-    max-width: 500px;
-    margin: 20px;
-}
-
-.map-container {
-    width: 100%;
-    height: 100%;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 10px;
-}
-
-/* Estilos para las redes sociales */
-.social-media {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-}
-
-.social-media img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    display: block;
-}
+        .social-media img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            display: block;
+        }
 
         /* Responsividad */
         @media (max-width: 768px) {
             .services-container {
                 flex-direction: column;
                 align-items: center;
+            }
+        }
+
+        /* Estilos para el botón "Cerrar" en el menú móvil */
+        .nav-close {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-close {
+                display: block;
+            }
+            .nav-close a {
+                font-size: 1.2em;
+                color: var(--rojo);
+                font-weight: bold;
             }
         }
     </style>
@@ -453,6 +482,8 @@
                 <span></span>
             </label>
             <ul class="nav-links">
+                <!-- Botón "Cerrar" para el menú móvil -->
+                <li class="nav-close"><a href="#">Cerrar</a></li>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#quienes-somos">Quiénes Somos</a></li>
                 <li><a href="#servicios">Servicios</a></li>
@@ -491,50 +522,48 @@
         </div>
     </section>
 
-    
-
-   <!-- Sección Servicios -->
-<section id="servicios" class="services">
-    <h2>Servicios</h2>
-    <div class="services-container">
-        <!-- Servicio 1: Torno y Torno CNC -->
-        <div class="service-item">
-            <img src="imagenes/torno.jpg" alt="Servicio de Torno y Torno CNC">
-            <h3>Torno y Torno CNC</h3>
-            <p>Servicio profesional de torneado para piezas de precisión con tecnología convencional y CNC.</p>
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services">
+        <h2>Servicios</h2>
+        <div class="services-container">
+            <!-- Servicio 1: Torno y Torno CNC -->
+            <div class="service-item">
+                <img src="imagenes/torno.jpg" alt="Servicio de Torno y Torno CNC">
+                <h3>Torno y Torno CNC</h3>
+                <p>Servicio profesional de torneado para piezas de precisión con tecnología convencional y CNC.</p>
+            </div>
+            <!-- Servicio 2: Fresa y Fresa CNC -->
+            <div class="service-item">
+                <img src="imagenes/fresa.jpg" alt="Servicio de Fresa y Fresa CNC">
+                <h3>Fresa y Fresa CNC</h3>
+                <p>Fresado de alta precisión, tanto convencional como CNC, para diversas aplicaciones industriales.</p>
+            </div>
+            <!-- Servicio 3: Desarrollo de Piezas y Maquinaria -->
+            <div class="service-item">
+                <img src="imagenes/desarrollo-piezas.jpg" alt="Desarrollo de Piezas y Maquinaria">
+                <h3>Desarrollo de Piezas y Maquinaria</h3>
+                <p>Fabricación de piezas a medida y diseño de maquinaria especializada según tus necesidades.</p>
+            </div>
+            <!-- Servicio 4: Corte Plasma y Oxicorte -->
+            <div class="service-item">
+                <img src="imagenes/corte-plasma.jpg" alt="Servicio de Corte Plasma y Oxicorte">
+                <h3>Corte Plasma y Oxicorte</h3>
+                <p>Cortes precisos en diversos materiales con tecnología de plasma y oxicorte.</p>
+            </div>
+            <!-- Servicio 5: Soldadura MIG, TIG, Electrodo -->
+            <div class="service-item">
+                <img src="imagenes/soldadura.jpg" alt="Servicio de Soldadura MIG, TIG, Electrodo">
+                <h3>Soldadura MIG, TIG, Electrodo</h3>
+                <p>Servicios de soldadura especializados para diversos materiales y proyectos.</p>
+            </div>
+            <!-- Servicio 6: Escaneo e Impresión 3D -->
+            <div class="service-item">
+                <img src="imagenes/escaneo-3d.jpg" alt="Servicio de Escaneo e Impresión 3D">
+                <h3>Escaneo e Impresión 3D</h3>
+                <p>Digitalización y prototipado rápido para ingeniería inversa y diseño.</p>
+            </div>
         </div>
-        <!-- Servicio 2: Fresa y Fresa CNC -->
-        <div class="service-item">
-            <img src="imagenes/fresa.jpg" alt="Servicio de Fresa y Fresa CNC">
-            <h3>Fresa y Fresa CNC</h3>
-            <p>Fresado de alta precisión, tanto convencional como CNC, para diversas aplicaciones industriales.</p>
-        </div>
-        <!-- Servicio 3: Desarrollo de Piezas y Maquinaria -->
-        <div class="service-item">
-            <img src="imagenes/desarrollo-piezas.jpg" alt="Desarrollo de Piezas y Maquinaria">
-            <h3>Desarrollo de Piezas y Maquinaria</h3>
-            <p>Fabricación de piezas a medida y diseño de maquinaria especializada según tus necesidades.</p>
-        </div>
-        <!-- Servicio 4: Corte Plasma y Oxicorte -->
-        <div class="service-item">
-            <img src="imagenes/corte-plasma.jpg" alt="Servicio de Corte Plasma y Oxicorte">
-            <h3>Corte Plasma y Oxicorte</h3>
-            <p>Cortes precisos en diversos materiales con tecnología de plasma y oxicorte.</p>
-        </div>
-        <!-- Servicio 5: Soldadura MIG, TIG, Electrodo -->
-        <div class="service-item">
-            <img src="imagenes/soldadura.jpg" alt="Servicio de Soldadura MIG, TIG, Electrodo">
-            <h3>Soldadura MIG, TIG, Electrodo</h3>
-            <p>Servicios de soldadura especializados para diversos materiales y proyectos.</p>
-        </div>
-        <!-- Servicio 6: Escaneo e Impresión 3D -->
-        <div class="service-item">
-            <img src="imagenes/escaneo-3d.jpg" alt="Servicio de Escaneo e Impresión 3D">
-            <h3>Escaneo e Impresión 3D</h3>
-            <p>Digitalización y prototipado rápido para ingeniería inversa y diseño.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Sección Testimonios -->
     <section id="testimonios" class="testimonials">
@@ -545,42 +574,40 @@
         </div>
     </section>
 
-   <!-- Sección Contacto -->
-<section id="contacto" class="contact">
-    <h2>Contacto</h2>
-    <div class="contact-content">
-        <div class="contact-info">
-            <p>Para consultas y cotizaciones, contáctanos a través de los siguientes medios:</p>
-            <ul>
-                <li><strong>Teléfono:</strong> <a href="tel:+593998757542">+593 99 875 7542</a></li>
-                <li><strong>WhatsApp:</strong> <a href="https://wa.me/593987654321" target="_blank">Enviar mensaje</a></li>
-                <li><strong>Correo Electrónico:</strong> <a href="mailto:metalcreaec@gmail.com">info@paak.com</a></li>
-                <li><strong>Dirección:</strong> Av. Nuñez de Bonilla N25-34 y Diaz de Armendariz</li>
-            </ul>
-            <!-- Enlaces a redes sociales -->
-            <div class="social-media">
-                <a href="https://www.facebook.com/paak" target="_blank">
-                    <img src="iconos/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://www.instagram.com/paak" target="_blank">
-                    <img src="iconos/instagram.png" alt="Instagram">
-                </a>
-                <a href="https://www.linkedin.com/company/paak" target="_blank">
-                    <img src="iconos/linkedin.png" alt="LinkedIn">
-                </a>
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>Para consultas y cotizaciones, contáctanos a través de los siguientes medios:</p>
+                <ul>
+                    <li><strong>Teléfono:</strong> <a href="tel:+593998757542">+593 99 875 7542</a></li>
+                    <li><strong>WhatsApp:</strong> <a href="https://wa.me/593987654321" target="_blank">Enviar mensaje</a></li>
+                    <li><strong>Correo Electrónico:</strong> <a href="mailto:metalcreaec@gmail.com">info@paak.com</a></li>
+                    <li><strong>Dirección:</strong> Av. Nuñez de Bonilla N25-34 y Diaz de Armendariz</li>
+                </ul>
+                <!-- Enlaces a redes sociales -->
+                <div class="social-media">
+                    <a href="https://www.facebook.com/paak" target="_blank">
+                        <img src="iconos/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/paak" target="_blank">
+                        <img src="iconos/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/company/paak" target="_blank">
+                        <img src="iconos/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+            <div class="contact-map">
+                <!-- Mapa de Ubicación -->
+                <div class="map-container">
+                    <!-- Reemplaza el 'src' con el enlace correcto de tu ubicación en Google Maps -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.795384153383!2d-78.5064331241779!3d-0.19427723540927294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59beb720605e1%3A0x2e6b4029b88447f7!2sPaak%20Mec%C3%A1nica%20Industrial!5e0!3m2!1ses!2sec!4v1729555037713!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
-        <div class="contact-map">
-            <!-- Mapa de Ubicación -->
-            <div class="map-container">
-                <!-- Reemplaza el 'src' con el enlace correcto de tu ubicación en Google Maps -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.795384153383!2d-78.5064331241779!3d-0.19427723540927294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59beb720605e1%3A0x2e6b4029b88447f7!2sPaak%20Mec%C3%A1nica%20Industrial!5e0!3m2!1ses!2sec!4v1729555037713!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa de Ubicación"></iframe>
-
-            </div>
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Pie de página -->
     <footer>
@@ -606,8 +633,16 @@
                 button.style.backgroundColor = '#C41F28'; // Color al soltar clic
             });
         });
+
+        // Cerrar el menú móvil al hacer clic en una opción
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const navToggle = document.getElementById('nav-toggle');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.checked = false;
+            });
+        });
     </script>
 </body>
 </html>
-
-
