@@ -104,6 +104,10 @@
             padding: 10px 20px;
         }
 
+        .logo a {
+            display: block;
+        }
+
         .logo img {
             height: 50px;
         }
@@ -233,15 +237,15 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                width: 100%;
+                margin: 0;
             }
 
             .about-us-text,
             .contact-info {
                 text-align: center;
-            }
-
-            .social-media {
-                justify-content: center;
+                width: 100%;
+                margin: 0;
             }
 
             .about-us-content img {
@@ -250,8 +254,8 @@
                 margin: 0; /* Eliminar márgenes que causan desplazamiento */
             }
 
-            .about-us-text {
-                margin: 20px;
+            .social-media {
+                justify-content: center;
             }
         }
 
@@ -313,6 +317,8 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .about-us-content img {
@@ -342,6 +348,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .service-item {
@@ -412,6 +420,8 @@
             align-items: flex-start;
             justify-content: center;
             flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .contact-info {
@@ -482,7 +492,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="imagenes/logo.png" alt="Logotipo de PAAK">
+                <a href="#inicio"><img src="imagenes/logo.png" alt="Logotipo de PAAK"></a>
             </div>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
