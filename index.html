@@ -29,6 +29,10 @@
         }
 
         /* Estilos Generales */
+        * {
+            box-sizing: border-box; /* Incluir padding y border en el cálculo del ancho total */
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -63,7 +67,7 @@
         }
 
         h3 {
-            color: var(--blanco); /* Cambiar el color del título a blanco */
+            color: var(--blanco); /* Títulos de los servicios en color blanco */
             font-size: 1.5em;
             margin-bottom: 0.5em;
             text-align: center;
@@ -229,43 +233,6 @@
             .nav-toggle:checked ~ .nav-links {
                 transform: translateX(-100%);
             }
-
-            /* Centrar el contenido en móvil */
-            .about-us-content,
-            .services-container,
-            .contact-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            .about-us-text,
-            .contact-info {
-                text-align: center;
-                width: 100%;
-                margin: 0;
-                padding: 20px;
-                box-sizing: border-box;
-            }
-
-            .about-us-content img {
-                max-width: 100%;
-                height: auto;
-                margin: 0;
-                padding: 0;
-            }
-
-            .about-us-text p {
-                margin: 0 0 20px 0;
-            }
-
-            .social-media {
-                justify-content: center;
-            }
         }
 
         /* Secciones */
@@ -348,6 +315,26 @@
             margin-bottom: 20px;
         }
 
+        /* Ajustes específicos para móviles */
+        @media (max-width: 768px) {
+            .about-us-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0;
+            }
+
+            .about-us-content img {
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .about-us-text {
+                margin: 20px 0;
+                padding: 0 10px;
+            }
+        }
+
         /* Sección Servicios */
         .services {
             background-color: var(--blanco);
@@ -387,7 +374,6 @@
         }
 
         .service-item h3 {
-            color: var(--blanco);
             margin-bottom: 10px;
         }
 
@@ -638,7 +624,7 @@
                 <!-- Mapa de Ubicación -->
                 <div class="map-container">
                     <!-- Reemplaza el 'src' con el enlace correcto de tu ubicación en Google Maps -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.795384153383!2d-78.5064331241779!3d-0.19427723540927294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59beb720605e1%3A0x2e6b4029b88447f7!2sPaak%20Mec%C3%A1nica%20Industrial!5e0!3m2!1ses!2sec!4v1729555037713!5m2!1ses!2sec" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -646,7 +632,7 @@
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; 2023 PAAK Mecánica Industrial. Todos los derechos reservados.</p>
+        <p>&copy; 2024 PAAK Mecánica Industrial. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Scripts JavaScript -->
