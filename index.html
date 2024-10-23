@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>PAAK - Mecánica Industrial de Precisión</title>
     <!-- Meta etiquetas para SEO -->
-    <meta name="description" content="PAAK es líder en soluciones de mecánica industrial de precisión en Ecuador. Ofrecemos servicios de torno, fresa, CNC, corte plasma, escaneo e impresión 3D.">
-    <meta name="keywords" content="mecánica industrial, torno, fresa, CNC, corte plasma, escaneo 3D, impresión 3D, Ecuador, PAAK">
+    <meta name="description" content="PAAK es líder en soluciones de mecánica industrial de precisión en Ecuador. Ofrecemos servicios de torno, fresa, CNC, corte plasma, impresión 3D, troquelado y rectificado.">
+    <meta name="keywords" content="mecánica industrial, torno, fresa, CNC, corte plasma, impresión 3D, troquelado, rectificado, Ecuador, PAAK">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Meta etiquetas Open Graph para redes sociales -->
     <meta property="og:title" content="PAAK - Mecánica Industrial de Precisión">
     <meta property="og:description" content="Tu aliado en soluciones de mecánica industrial en Ecuador.">
-    <meta property="og:image" content="https://www.tu-dominio.com/compartir.jpg"> <!-- Reemplaza con la URL de una imagen representativa -->
+    <meta property="og:image" content="https://www.tu-dominio.com/compartir.jpg">
     <meta property="og:url" content="https://www.tu-dominio.com">
     <meta property="og:type" content="website">
 
@@ -63,7 +63,7 @@
         }
 
         h3 {
-            color: var(--azul-oscuro);
+            color: var(--blanco); /* Cambiar el color del título a blanco */
             font-size: 1.5em;
             margin-bottom: 0.5em;
             text-align: center;
@@ -80,11 +80,11 @@
         }
 
         button:hover {
-            background-color: #C41F28; /* Un tono más oscuro del rojo */
+            background-color: #C41F28;
         }
 
         button:active {
-            background-color: #A71B22; /* Un tono aún más oscuro del rojo */
+            background-color: #A71B22;
         }
 
         /* Encabezado */
@@ -239,6 +239,8 @@
                 text-align: center;
                 width: 100%;
                 margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
 
             .about-us-text,
@@ -246,12 +248,19 @@
                 text-align: center;
                 width: 100%;
                 margin: 0;
+                padding: 20px;
+                box-sizing: border-box;
             }
 
             .about-us-content img {
                 max-width: 100%;
                 height: auto;
-                margin: 0; /* Eliminar márgenes que causan desplazamiento */
+                margin: 0;
+                padding: 0;
+            }
+
+            .about-us-text p {
+                margin: 0 0 20px 0;
             }
 
             .social-media {
@@ -262,7 +271,7 @@
         /* Secciones */
         section {
             padding: 100px 20px 50px;
-            margin-top: 60px; /* Para evitar que el contenido quede oculto detrás del menú fijo */
+            margin-top: 60px;
         }
 
         /* Sección Hero */
@@ -278,7 +287,7 @@
 
         .hero::before {
             content: '';
-            background-color: rgba(29, 29, 27, 0.7); /* Capa semitransparente */
+            background-color: rgba(29, 29, 27, 0.7);
             position: absolute;
             top: 0;
             left: 0;
@@ -355,7 +364,7 @@
         .service-item {
             background-color: var(--azul-oscuro);
             color: var(--blanco);
-            width: calc(25% - 40px); /* Cuatro recuadros por fila */
+            width: calc(25% - 40px);
             margin: 20px;
             padding: 20px;
             text-align: center;
@@ -371,36 +380,37 @@
 
         .service-item img {
             width: 100%;
-            height: 200px; /* Fija una altura para las imágenes */
-            object-fit: cover; /* Ajusta la imagen sin distorsión */
+            height: 200px;
+            object-fit: cover;
             margin-bottom: 15px;
             border-radius: 5px;
         }
 
         .service-item h3 {
+            color: var(--blanco);
             margin-bottom: 10px;
         }
 
         .service-item p {
             font-size: 1em;
-            min-height: 80px; /* Ajusta para igualar la altura de los textos */
+            min-height: 80px;
         }
 
         @media (max-width: 1200px) {
             .service-item {
-                width: calc(33.333% - 40px); /* Tres recuadros por fila en pantallas medianas */
+                width: calc(33.333% - 40px);
             }
         }
 
         @media (max-width: 768px) {
             .service-item {
-                width: calc(50% - 40px); /* Dos recuadros por fila en pantallas más pequeñas */
+                width: calc(50% - 40px);
             }
         }
 
         @media (max-width: 600px) {
             .service-item {
-                width: calc(100% - 40px); /* Un recuadro por fila en pantallas pequeñas */
+                width: calc(100% - 40px);
             }
         }
 
@@ -483,7 +493,6 @@
             object-fit: contain;
             display: block;
         }
-
     </style>
 
 </head>
@@ -596,7 +605,6 @@
     <section id="testimonios" class="testimonials">
         <h2>Testimonios</h2>
         <div class="testimonials-container">
-            <!-- Aquí podrás agregar testimonios cuando estén disponibles -->
             <p>Próximamente añadiremos testimonios de nuestros clientes satisfechos.</p>
         </div>
     </section>
@@ -630,7 +638,7 @@
                 <!-- Mapa de Ubicación -->
                 <div class="map-container">
                     <!-- Reemplaza el 'src' con el enlace correcto de tu ubicación en Google Maps -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.795384153383!2d-78.5064331241779!3d-0.19427723540927294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59beb720605e1%3A0x2e6b4029b88447f7!2sPaak%20Mec%C3%A1nica%20Industrial!5e0!3m2!1ses!2sec!4v1729555037713!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -648,16 +656,16 @@
 
         buttons.forEach(button => {
             button.addEventListener('mouseenter', () => {
-                button.style.backgroundColor = '#C41F28'; // Color más oscuro al pasar el cursor
+                button.style.backgroundColor = '#C41F28';
             });
             button.addEventListener('mouseleave', () => {
-                button.style.backgroundColor = '#E52232'; // Color original
+                button.style.backgroundColor = '#E52232';
             });
             button.addEventListener('mousedown', () => {
-                button.style.backgroundColor = '#A71B22'; // Color aún más oscuro al hacer clic
+                button.style.backgroundColor = '#A71B22';
             });
             button.addEventListener('mouseup', () => {
-                button.style.backgroundColor = '#C41F28'; // Color al soltar clic
+                button.style.backgroundColor = '#C41F28';
             });
         });
 
